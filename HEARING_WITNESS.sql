@@ -1,0 +1,25 @@
+select * from perse.dbo.HEARING_WITNESS
+
+
+select * from STG_HEARING_WITNESS_TEST 
+
+
+alter table STG_HEARING_WITNESS_TEST
+add HEARING_ID nvarchar(20);
+
+select * from STG_HEARING_TEST where ID_PERSE_CASE = '86903' 
+
+select * from STG_WITNESS_CONV_SUCCESS
+
+select * from STG_HEARING_CONV_SUCCESS
+
+update STG_HEARING_WITNESS_TEST
+set HEARING_ID = X.SalesforceRecordId
+from STG_HEARING_CONV_SUCCESS X where X.ID_PERSE_CASE = STG_HEARING_WITNESS_TEST.ID_PERSE_CASE
+
+
+
+
+select * from STG_HEARING_WITNESS_CONV_SUCCESS
+
+select * from STG_HEARING_WITNESS_CONV_FAIL
